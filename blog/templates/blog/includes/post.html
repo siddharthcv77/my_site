@@ -1,0 +1,15 @@
+{% load static %}
+
+<li>
+    <article class="post">
+        <a href="{% url "post-detail-page" slug=post.slug %}">
+            <img src="{% static "blog/images/"|add:post.image %}" alt="{{ post.title }}"/>
+            <div class="post_content">
+                <h3>{{ post.title }}</h3>   {% comment %} we use dot notation in html template instead of the usual post['title'] in python  {% endcomment %}                
+                <p>
+                    {{post.excerpt}}
+                </p>
+            </div>
+        </a>
+    </article>
+</li>
